@@ -1,0 +1,23 @@
+.nav-container{
+    background-color: cornsilk;
+    color: black;
+
+}
+.nav-conatainer a{
+   
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+    padding: 5px 7px;
+   
+}
+.nav-conatainer a:hover{
+   color: rgb(45, 2, 80);
+   font-weight: 600;
+}
+.active{
+    background-color: rgb(5, 68, 5);
+    border-radius: 5px;
+    
+
+}
