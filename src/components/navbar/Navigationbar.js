@@ -4,12 +4,12 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { useHistory,NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import tour from '../../images/tour.png'
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 
 
 
 const Navigation = () => {
-    const {user,logOut}= useFirebase();
+    const {user,logOut}= useAuth();
 
 
     const url='/login';

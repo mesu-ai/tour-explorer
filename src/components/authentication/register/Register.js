@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import useFirebase from '../../../hooks/useFirebase';
 import googlelogo from '../../../images/google.png';
 import { getAuth, createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
 import { Spinner } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
 
 
 
 const Register = () => {
-    const {signInUsingGoogle} = useFirebase();
+    const {signInUsingGoogle} = useAuth();
     const auth = getAuth();
     const [error,setError]=useState('');
     const [isspinner,setSpinner]=useState(false);

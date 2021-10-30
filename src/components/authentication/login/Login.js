@@ -3,15 +3,15 @@ import './Login.css';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import googlelogo from '../../../images/google.png';
-import useFirebase from '../../../hooks/useFirebase';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import useAuth from '../../../hooks/useAuth';
 
 
 //const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 
 const Login = () => {
-    const {signInUsingGoogle} = useFirebase();
+    const {signInUsingGoogle} = useAuth();
     const auth = getAuth();
     const [error,setError]= useState('');
 

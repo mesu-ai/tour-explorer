@@ -10,10 +10,13 @@ import Home from './components/pages/home/Home';
 import Notfind from './components/pages/notfind/Notfind';
 import Services from './components/pages/services/Services';
 import Tourguide from './components/pages/tourguide/Tourguide';
+import AuthProvider from './contex/AuthProvider';
 
 function App() {
   return (
     <div className="App">
+
+      <AuthProvider>
 
       <BrowserRouter>
       <Header></Header>
@@ -34,6 +37,11 @@ function App() {
       </Switch>
       <Footer></Footer>
       </BrowserRouter>
+
+
+      </AuthProvider>
+
+      
       
 
     </div>
