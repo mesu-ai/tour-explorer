@@ -7,6 +7,8 @@ import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import Booking from './components/pages/booking/Booking';
 import Home from './components/pages/home/Home';
+import AddTourPackage from './components/pages/manageTour/add/AddTourPackage';
+import ShowTourPackage from './components/pages/manageTour/showall/ShowTourPackage';
 import Notfind from './components/pages/notfind/Notfind';
 import Services from './components/pages/services/Services';
 import Tourguide from './components/pages/tourguide/Tourguide';
@@ -28,6 +30,9 @@ function App() {
         <Route path='/services'><Services></Services></Route>
         <Route path='/tourguide'><Tourguide></Tourguide></Route>
         <PrivateRoute path='/booking'><Booking></Booking></PrivateRoute>
+
+        <Route path='/tour/add'><AddTourPackage></AddTourPackage></Route>
+        <Route path='/tour/show'><ShowTourPackage></ShowTourPackage></Route>
 
         <Route path='/login'><Login></Login></Route>
         <Route path='/register'><Register></Register></Route>
