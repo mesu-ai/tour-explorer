@@ -1,40 +1,93 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import useFirebase from '../../../hooks/useFirebase';
 import googlelogo from '../../../images/google.png';
+import { getAuth, createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
+import { Spinner } from 'react-bootstrap';
 
 
 
 const Register = () => {
     const {signInUsingGoogle} = useFirebase();
+    const auth = getAuth();
+    const [error,setError]=useState('');
+    const [isspinner,setSpinner]=useState(false);
 
 
     const { register, handleSubmit,reset, formState: { errors }}=useForm();
     
       const onSubmit = (data) => {
-        alert(JSON.stringify(data));
-        reset();
+       const name= data.name;
+       const email=data.email;
+       const password=data.password;
+
+       
+       handleUserRegister(name,email,password);
+
+      }
+
+      const handleUserRegister=(name,email,password)=>{
+         
+        setSpinner(true);
+        
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((result) => {
+
+            setUserName(name);
+            const user = result.user;           
+            reset();
+            setError('');
+            setSpinner(false);
+            
+          })
+          .catch((error) => {
+            
+            setError(error.message);
+            
+          });
+
+     const setUserName=(name)=>{
+
+        updateProfile(auth.currentUser, {
+          displayName:name
+        }).then(() => {
+          // Profile updated!
+          
+        }).catch((error) => {        
+          setError(error.message);
+
+        });
+     }
+
+
       }
 
       
 
     return (
         
-            <div className="form-container my-5">
+           
+        <>
+        { isspinner? 
+        <Spinner className="mt-5" animation="border" variant="primary" />:
+
+        <div className="form-container my-5">
 
             <form className="my-5 d-flex flex-column w-50 mx-auto form-field" onSubmit={handleSubmit(onSubmit)}>
             <h3 className="fw-bold">Please Register</h3>
 
-            <input {...register("name",{ pattern: /^[A-Za-z]+$/i , required: true })} placeholder="Name" />
+            <input {...register("name",{ pattern: /^[a-zA-Z ]{2,30}$/ , required: true })} placeholder="Name" />
             {errors.name && "⚠  Name is required"}
 
-            <input {...register("email",{ pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ , required: true })} placeholder="Email" />
+            <input {...register("email",{ pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/ , required: true })} placeholder="Email" />
             {errors.email && "⚠ Email is required"}
 
             <input type="password" {...register("password",{ required: true })} placeholder="Password"/>
             {errors.password && "⚠ Password is required"}
-            <input className="btn btn-primary" type="submit" value="Login" />
+
+            <p className="text-danger fw-bold">{error}</p>
+            <input className="btn btn-primary" type="submit" value="Register" />
             </form>
 
             <Link to='/login'>
@@ -44,11 +97,13 @@ const Register = () => {
             <h4 className="text-danger">or signin with</h4>
             <img onClick={signInUsingGoogle} src={googlelogo} alt="" height="35" width="35" />
 
-           
+        </div>
+        }
 
 
 
-           </div>
+        </>
+            
             
     );
 };

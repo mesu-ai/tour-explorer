@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import googlelogo from '../../../images/google.png';
 import useFirebase from '../../../hooks/useFirebase';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 
 //const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -11,16 +12,36 @@ import useFirebase from '../../../hooks/useFirebase';
 
 const Login = () => {
     const {signInUsingGoogle} = useFirebase();
+    const auth = getAuth();
+    const [error,setError]= useState('');
 
     const { register, handleSubmit,reset, formState: { errors }}=useForm();
    
     
       const onSubmit = (data) => {
-        alert(JSON.stringify(data));
+        const email=data.email;
+        const password=data.password;
+
+        handleUserLogin(email,password);
         reset();
 
 
       };
+
+      const handleUserLogin=(email,password)=>{
+        
+        signInWithEmailAndPassword(auth, email, password)
+          .then((result) => {
+            // Signed in 
+            const user = result.user;
+            reset();
+            // ...
+          })
+          .catch((error) => {  
+            setError(error.message);
+          });
+
+      }
 
           
     return (
@@ -31,11 +52,14 @@ const Login = () => {
             <h3 className="fw-bold">Please Login</h3>
             
             
-            <input {...register("email",{ pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ , required: true })} placeholder="Email" />
+            <input {...register("email",{ pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/ , required: true })} placeholder="Email" />
             {errors.email && "⚠ Email is required"}
 
             <input type="password" {...register("password",{ required: true })} placeholder="Password"/>
             {errors.password && "⚠ Password is required"}
+
+            <p className="text-danger fw-bold">{error}</p>
+
             <input className="btn btn-primary" type="submit" value="Login" />
             </form>
             
