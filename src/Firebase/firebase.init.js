@@ -4,4 +4,4 @@ import firebaseConfig from "./firebase.config";
 const firebaseInitialize=()=>{
     initializeApp(firebaseConfig);
 }
-export default firebaseInitialize();
+export default firebaseInitialize;

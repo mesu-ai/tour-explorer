@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter,Switch,Route } from 'react-router-dom';
 import './App.css';
+import Login from './components/authentication/login/Login';
+import Register from './components/authentication/register/Register';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import Booking from './components/pages/booking/Booking';
@@ -22,6 +24,9 @@ function App() {
         <Route path='/services'><Services></Services></Route>
         <Route path='/tourguide'><Tourguide></Tourguide></Route>
         <Route path='/booking'><Booking></Booking></Route>
+
+        <Route path='/login'><Login></Login></Route>
+        <Route path='/register'><Register></Register></Route>
 
         <Route path='*'><Notfind></Notfind></Route>
     

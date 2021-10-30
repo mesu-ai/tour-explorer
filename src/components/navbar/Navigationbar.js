@@ -1,12 +1,23 @@
 import React from 'react';
 import './Navigationbar.css';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { useHistory,NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import tour from '../../images/tour.png'
+import useFirebase from '../../hooks/useFirebase';
+
 
 
 const Navigation = () => {
+    const {user,logOut}= useFirebase();
+
+
+    const url='/login';
+    const history=useHistory();
+    const loginPageHandeler=()=>{
+        history.push(url);
+
+    }
     
     return (
           
@@ -26,13 +37,14 @@ const Navigation = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
         
         <Nav className="me-auto nav-conatainer d-flex align-items-center">
+
             <NavLink activeClassName="active text-white" to="/home">Home</NavLink>
             <NavLink activeClassName="active text-white" to="/services">Services</NavLink>
             <NavLink activeClassName="active text-white" to="/tourguide">Tour Guide</NavLink>
             <NavLink activeClassName="active text-white" to="/booking">Booking</NavLink>
 
             <NavDropdown title="Manage Service" id="collasible-nav-dropdown">
-            <NavDropdown.Item activeClassName="active text-white" as={HashLink}  to="/service/add">Add New Service</NavDropdown.Item>
+            <NavDropdown.Item  as={HashLink}  to="/service/add">Add New Service</NavDropdown.Item>
             <NavDropdown.Item as={HashLink} to="/service/myorder">My Order</NavDropdown.Item> 
             <NavDropdown.Item as={HashLink} to="/service/allorder">Manage All Order</NavDropdown.Item>
             <NavDropdown.Divider />
@@ -40,12 +52,18 @@ const Navigation = () => {
             </NavDropdown>
         </Nav>
 
-        <Nav>
+        <Nav className="d-flex justify-content-center align-items-center fw-bold">
         
-            <span>name</span>
-            <button>Login</button>
+        {user.email && 
+        <span className="text-black me-2">{user.displayName}</span>
+        
+        }
+            
+        { user.email ? <button className="btn btn-danger" onClick={logOut}>Logout</button> : <button className="btn btn-danger" onClick={loginPageHandeler}>Login</button>
+        }
+        
 
-            <button>Logout</button>
+        
 
         </Nav>
         </Navbar.Collapse>
