@@ -10,6 +10,7 @@ import Home from './components/pages/home/Home';
 import Notfind from './components/pages/notfind/Notfind';
 import Services from './components/pages/services/Services';
 import Tourguide from './components/pages/tourguide/Tourguide';
+import PrivateRoute from './components/privateroute/PrivateRoute';
 import AuthProvider from './contex/AuthProvider';
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
         <Route exact path='/home'><Home></Home></Route>
         <Route path='/services'><Services></Services></Route>
         <Route path='/tourguide'><Tourguide></Tourguide></Route>
-        <Route path='/booking'><Booking></Booking></Route>
+        <PrivateRoute path='/booking'><Booking></Booking></PrivateRoute>
 
         <Route path='/login'><Login></Login></Route>
         <Route path='/register'><Register></Register></Route>
