@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link,useHistory,useParams } from 'react-router-dom';
 import googlelogo from '../../../images/google.png';
-import { getAuth, createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,updateProfile} from "firebase/auth";
 import { Spinner } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 
@@ -13,6 +13,11 @@ const Register = () => {
     const auth = getAuth();
     const [error,setError]=useState('');
     const [isspinner,setSpinner]=useState(false);
+    
+
+    const history= useHistory();
+    const location=useParams();
+    const redirect_uri=location.state?.from || '/home';
 
 
     const { register, handleSubmit,reset, formState: { errors }}=useForm();
@@ -39,7 +44,8 @@ const Register = () => {
             reset();
             setError('');
             setSpinner(false);
-            
+            history.push(redirect_uri);
+ 
           })
           .catch((error) => {
             
@@ -47,12 +53,15 @@ const Register = () => {
             
           });
 
-     const setUserName=(name)=>{
+      }
+
+      const setUserName=(name)=>{
 
         updateProfile(auth.currentUser, {
           displayName:name
         }).then(() => {
           // Profile updated!
+          window.location.reload();
           
         }).catch((error) => {        
           setError(error.message);
@@ -60,8 +69,7 @@ const Register = () => {
         });
      }
 
-
-      }
+     
 
       
 

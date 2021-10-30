@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link,useHistory,useParams } from 'react-router-dom';
 import googlelogo from '../../../images/google.png';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import useAuth from '../../../hooks/useAuth';
@@ -14,9 +14,26 @@ const Login = () => {
     const {signInUsingGoogle} = useAuth();
     const auth = getAuth();
     const [error,setError]= useState('');
+    const [isLoading,setLoading]=useState(true);
 
     const { register, handleSubmit,reset, formState: { errors }}=useForm();
-   
+
+   const history= useHistory();
+   const location=useParams();
+   const redirect_uri=location.state?.from || '/';
+
+    const handleGoogleLogin=()=>{
+      setLoading(true);
+      signInUsingGoogle()
+      .then(result=>{
+        history.push(redirect_uri);
+
+
+      }).catch((error) => {  
+        setError(error.message);
+      }).finally(()=>setLoading(false))
+
+    }
     
       const onSubmit = (data) => {
         const email=data.email;
@@ -32,7 +49,7 @@ const Login = () => {
         
         signInWithEmailAndPassword(auth, email, password)
           .then((result) => {
-            // Signed in 
+            history.push(redirect_uri);
             const user = result.user;
             reset();
             // ...
@@ -69,7 +86,7 @@ const Login = () => {
 
             <h4 className="text-danger">or signin with</h4>
 
-            <img onClick={signInUsingGoogle} src={googlelogo} alt="" height="35" width="35" />
+            <img onClick={handleGoogleLogin} src={googlelogo} alt="" height="35" width="35" />
 
 
             

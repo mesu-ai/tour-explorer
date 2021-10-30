@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Navigationbar.css';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { useHistory,NavLink } from 'react-router-dom';
@@ -17,7 +17,10 @@ const Navigation = () => {
     const loginPageHandeler=()=>{
         history.push(url);
 
+
     }
+
+    
     
     return (
           
