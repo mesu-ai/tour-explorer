@@ -7,6 +7,7 @@ import { Col, Row } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 
 const UpdateBooking = () => {
+    
     const {id}= useParams();
     const [bookPackage,setBookPackage]=useSelectedBooking(id);
     const {user}=useAuth();
@@ -68,13 +69,13 @@ const UpdateBooking = () => {
 
     const onSubmit = data =>{
         console.log(data);
-        // axios.put(url,bookPackage)
-        // .then(result=>{
-        //         alert('Update successfully');
-        //       //  console.log(data);
-        //         reset();
+        axios.put(url,bookPackage)
+        .then(result=>{
+                alert('Update successfully');
+              //  console.log(data);
+                reset();
             
-        // })
+        })
     }
 
    

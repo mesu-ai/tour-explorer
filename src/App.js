@@ -44,6 +44,7 @@ function App() {
         <Route path='/bookingmanage'><ManageBooking></ManageBooking></Route>
 
         <Route path='/bookingupdate/:id'><UpdateBooking></UpdateBooking></Route>
+        
 
         <Route path='/tourdetails/:id'><TourDetails></TourDetails></Route>
 
