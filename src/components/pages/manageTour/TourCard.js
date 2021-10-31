@@ -1,12 +1,9 @@
-import React from 'react';
-import './TourPackage.css';
-import { Card, Col } from 'react-bootstrap';
 import Button from '@restart/ui/esm/Button';
+import React from 'react';
+import { Card, Col } from 'react-bootstrap';
 
-const Tour = (props) => {
+const TourCard = (props) => {
     const {_id,title,price,img,tour_date,tour_duration}=props.tourpackage;
-
-
     return (
         <Col>
             <Card className="w-100 shadow-lg p-2 package-card">
@@ -21,8 +18,11 @@ const Tour = (props) => {
                     <Card.Text className="package-duration mt-0">{tour_duration} Tour Package</Card.Text>
                 </Card.Footer>
                 
+                <Button onClick={()=>props.deleteHandeler(_id)} className="btn btn-success my-3">Update</Button>
+                
+                <Button onClick={()=>props.deleteHandeler(_id)} className="btn btn-danger my-3">Delete</Button>
 
-                <Button onClick={()=>props.handleDetails(_id)} className="btn btn-success my-3">Details</Button>
+                
                 
                 </Card.Body>
             </Card>
@@ -30,4 +30,4 @@ const Tour = (props) => {
     );
 };
 
-export default Tour;
+export default TourCard;

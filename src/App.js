@@ -8,10 +8,11 @@ import Header from './components/header/Header';
 import Booking from './components/pages/booking/Booking';
 import Home from './components/pages/home/Home';
 import AddTourPackage from './components/pages/manageTour/add/AddTourPackage';
-import ShowTourPackage from './components/pages/manageTour/showall/ShowTourPackage';
+import DeleteUpdate from './components/pages/manageTour/deleteUpdate/DeleteUpdate';
 import Notfind from './components/pages/notfind/Notfind';
 import Services from './components/pages/services/Services';
 import Tourguide from './components/pages/tourguide/Tourguide';
+import TourDetails from './components/pages/tourPackage/TourDetails';
 import PrivateRoute from './components/privateroute/PrivateRoute';
 import AuthProvider from './contex/AuthProvider';
 
@@ -32,7 +33,9 @@ function App() {
         <PrivateRoute path='/booking'><Booking></Booking></PrivateRoute>
 
         <Route path='/tour/add'><AddTourPackage></AddTourPackage></Route>
-        <Route path='/tour/show'><ShowTourPackage></ShowTourPackage></Route>
+        <Route path='/tour/managetour'><DeleteUpdate></DeleteUpdate></Route>
+        
+        <Route path='/tourdetails/:id'><TourDetails></TourDetails></Route>
 
         <Route path='/login'><Login></Login></Route>
         <Route path='/register'><Register></Register></Route>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './Navigationbar.css';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { useHistory,NavLink } from 'react-router-dom';
@@ -48,6 +48,7 @@ const Navigation = () => {
 
             <NavDropdown title="Manage Service" id="collasible-nav-dropdown">
             <NavDropdown.Item  as={HashLink}  to="/tour/add">Add Tour Package</NavDropdown.Item>
+            <NavDropdown.Item  as={HashLink}  to="/tour/managetour">Manage Tour</NavDropdown.Item>
             <NavDropdown.Item as={HashLink} to="/tour/myorder">My Order</NavDropdown.Item> 
             <NavDropdown.Item as={HashLink} to="/tour/allorder">Manage All Order</NavDropdown.Item>
             <NavDropdown.Divider />
