@@ -6,6 +6,8 @@ import Register from './components/authentication/register/Register';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import Booking from './components/pages/booking/Booking';
+import ManageBooking from './components/pages/booking/ManageBooking';
+import UpdateBooking from './components/pages/booking/UpdateBooking';
 import Home from './components/pages/home/Home';
 import AddTourPackage from './components/pages/manageTour/add/AddTourPackage';
 import DeleteUpdate from './components/pages/manageTour/deleteUpdate/DeleteUpdate';
@@ -31,11 +33,17 @@ function App() {
         <Route exact path='/home'><Home></Home></Route>
         <Route path='/services'><Services></Services></Route>
         <Route path='/tourguide'><Tourguide></Tourguide></Route>
-        <PrivateRoute path='/booking/:id'><Booking></Booking></PrivateRoute>
+        
 
         <Route path='/tour/add'><AddTourPackage></AddTourPackage></Route>
         <Route path='/tour/managetour'><DeleteUpdate></DeleteUpdate></Route>
         <Route path='/tour/updatetour/:id'><UpdatePackage></UpdatePackage></Route>
+
+        <PrivateRoute path='/booking/:id'><Booking></Booking></PrivateRoute>
+
+        <Route path='/bookingmanage'><ManageBooking></ManageBooking></Route>
+
+        <Route path='/bookingupdate/:id'><UpdateBooking></UpdateBooking></Route>
 
         <Route path='/tourdetails/:id'><TourDetails></TourDetails></Route>
 

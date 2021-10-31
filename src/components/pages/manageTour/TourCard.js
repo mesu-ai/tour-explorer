@@ -6,7 +6,7 @@ const TourCard = (props) => {
     const {_id,title,price,img,tour_date,tour_duration}=props.tourpackage;
     return (
         <Col>
-            <Card className="w-100 shadow-lg p-2 package-card">
+            <Card className="h-100 shadow-lg p-2 package-card">
                 <Card.Img variant="top" src={img} height="200" />
                 <Card.Body>
                 <Card.Title className="text-capitalize fw-bold package-title">{title}</Card.Title>

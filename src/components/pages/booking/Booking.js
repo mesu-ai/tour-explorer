@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
@@ -10,9 +11,11 @@ import './Booking.css';
 const Booking = () => {
     const {user}= useAuth();
     const {id}=useParams();
+    const url='http://localhost:5000/booking';
+
 
     const [tourPack,setTourPack] = useSelectedPackage(id);
-    const { register, handleSubmit,setFocus } = useForm();
+    const { register, handleSubmit,setFocus,reset } = useForm();
 
     const packagePrice= parseInt(tourPack.price);
     const tax= parseFloat(packagePrice*.15);
@@ -22,6 +25,19 @@ const Booking = () => {
 
 
     const onSubmit = data => {
+        const bookingStatus="Pending";
+        data.bookingStatus=bookingStatus;
+
+
+        axios.post(url,data)
+        .then(result=>{
+            if(result.data.insertedId){
+                alert('Booking Successfully !');
+                reset();
+            }
+        })
+
+        
         console.log(data);
 
     }
