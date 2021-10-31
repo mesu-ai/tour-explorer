@@ -2,6 +2,7 @@ import Button from '@restart/ui/esm/Button';
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const TourDetails = () => {
     const {id}= useParams();
@@ -35,8 +36,9 @@ const TourDetails = () => {
                     <Card.Text className="package-duration mt-0">{tourPackage?.tour_duration} Tour Package</Card.Text>
                 </Card.Footer>
                 
-
+                <Link to={`/booking/${id}`}>
                 <Button className="btn btn-success my-3">Book A Package</Button>
+                </Link>
                 </Card.Body>
             </Card>
     );

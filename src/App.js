@@ -31,7 +31,7 @@ function App() {
         <Route exact path='/home'><Home></Home></Route>
         <Route path='/services'><Services></Services></Route>
         <Route path='/tourguide'><Tourguide></Tourguide></Route>
-        <PrivateRoute path='/booking'><Booking></Booking></PrivateRoute>
+        <PrivateRoute path='/booking/:id'><Booking></Booking></PrivateRoute>
 
         <Route path='/tour/add'><AddTourPackage></AddTourPackage></Route>
         <Route path='/tour/managetour'><DeleteUpdate></DeleteUpdate></Route>
