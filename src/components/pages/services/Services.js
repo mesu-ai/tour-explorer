@@ -1,9 +1,11 @@
 import React from 'react';
+import TourPackages from '../tourPackage/TourPackages';
 
 const Services = () => {
     return (
         <div>
-            <h3>service page</h3>
+            
+            <TourPackages></TourPackages>
             
         </div>
     );

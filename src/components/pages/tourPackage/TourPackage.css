@@ -1,0 +1,41 @@
+.package-card{
+
+}
+.package-card:hover{
+background-color:snow;
+}
+
+.package-card:hover .package-title{
+    color: crimson;
+    font-size: 20px;
+
+
+}
+.package-card:hover .package-price{
+    font-weight: bold;
+    
+    font-size: 18px;
+}
+.package-date{
+    font-weight: bold;
+    color: darkblue;
+}
+.package-card:hover .package-date{
+    color: green;
+    
+}
+.cost{
+    font-weight: bold;
+}
+
+.package-card:hover .cost{
+    color: navy;
+    font-size: 20px;
+
+}
+
+.package-duration{
+    color: rgb(212, 17, 17);
+    font-weight: bold;
+    
+}
