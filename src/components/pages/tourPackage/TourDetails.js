@@ -20,7 +20,6 @@ const TourDetails = () => {
 
 
 
-
     return (
          <Card className="w-100 shadow-lg p-2 package-card container my-5">
                 <Card.Img  variant="top" src={tourPackage?.img} height="300" />

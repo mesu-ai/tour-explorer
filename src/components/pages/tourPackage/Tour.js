@@ -21,8 +21,11 @@ const Tour = (props) => {
                     <Card.Text className="package-duration mt-0">{tour_duration} Tour Package</Card.Text>
                 </Card.Footer>
                 
+                
+                <Button onClick={()=>props.handleDetails(_id)} className="btn btn-success my-3">{props?.children}</Button>
 
-                <Button onClick={()=>props.handleDetails(_id)} className="btn btn-success my-3">Details</Button>
+
+                
                 
                 </Card.Body>
             </Card>
