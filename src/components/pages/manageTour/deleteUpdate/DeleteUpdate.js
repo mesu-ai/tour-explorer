@@ -1,18 +1,18 @@
 import axios from 'axios';
 import React from 'react';
 import { Row } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 import useTourPackage from '../../../../hooks/useTourPackage';
 import TourCard from '../TourCard';
 
 const DeleteUpdate = () => {
     const [tourpackages,setTourPackages]= useTourPackage();
+    const history=useHistory();
     
-
 
     const deleteHandeler=(id)=>{
         const url=`http://localhost:5000/tourpackages/${id}`;
         console.log(id);
-
 
         const proceed=window.confirm('Are you want to sure delete the package?');
 
@@ -21,17 +21,15 @@ const DeleteUpdate = () => {
             .then(result=>{
                 const remainingPackage=tourpackages.filter(tourpackage=>tourpackage._id!==id);
                 setTourPackages(remainingPackage);          
-
         })
 
-
         }
-
-        
-
-
     }
+
     const updateHandeler=(id)=>{
+        const url=`/tour/updatetour/${id}`;
+        history.push(url);
+        
         console.log(id);
 
 

@@ -9,6 +9,7 @@ import Booking from './components/pages/booking/Booking';
 import Home from './components/pages/home/Home';
 import AddTourPackage from './components/pages/manageTour/add/AddTourPackage';
 import DeleteUpdate from './components/pages/manageTour/deleteUpdate/DeleteUpdate';
+import UpdatePackage from './components/pages/manageTour/update/UpdatePackage';
 import Notfind from './components/pages/notfind/Notfind';
 import Services from './components/pages/services/Services';
 import Tourguide from './components/pages/tourguide/Tourguide';
@@ -34,7 +35,8 @@ function App() {
 
         <Route path='/tour/add'><AddTourPackage></AddTourPackage></Route>
         <Route path='/tour/managetour'><DeleteUpdate></DeleteUpdate></Route>
-        
+        <Route path='/tour/updatetour/:id'><UpdatePackage></UpdatePackage></Route>
+
         <Route path='/tourdetails/:id'><TourDetails></TourDetails></Route>
 
         <Route path='/login'><Login></Login></Route>
