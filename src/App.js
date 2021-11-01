@@ -38,22 +38,22 @@ function App() {
         <Route path='/tourguide'><Tourguide></Tourguide></Route>
         
 
-        <Route path='/tour/add'><AddTourPackage></AddTourPackage></Route>
-        <Route path='/tour/managetour'><DeleteUpdate></DeleteUpdate></Route>
-        <Route path='/tour/updatetour/:id'><UpdatePackage></UpdatePackage></Route>
+        <PrivateRoute path='/tour/add'><AddTourPackage></AddTourPackage></PrivateRoute>
+        <PrivateRoute path='/tour/managetour'><DeleteUpdate></DeleteUpdate></PrivateRoute>
+        <PrivateRoute path='/tour/updatetour/:id'><UpdatePackage></UpdatePackage></PrivateRoute>
 
         <PrivateRoute path='/booking/:id'><Booking></Booking></PrivateRoute>
 
-        <Route path='/bookingmanage'><ManageBooking></ManageBooking></Route>
+        <PrivateRoute path='/bookingmanage'><ManageBooking></ManageBooking></PrivateRoute>
 
-        <Route path='/bookingupdate/:id'><UpdateBooking></UpdateBooking></Route>
-        <Route path="/mybooking"> <MyBooking></MyBooking>  </Route>
+        <PrivateRoute path='/bookingupdate/:id'><UpdateBooking></UpdateBooking></PrivateRoute>
+        <PrivateRoute path="/mybooking"> <MyBooking></MyBooking>  </PrivateRoute>
         
 
-        <Route path='/tourdetails/:id'><TourDetails></TourDetails></Route>
+        <PrivateRoute path='/tourdetails/:id'><TourDetails></TourDetails></PrivateRoute>
 
         <Route path='/about'><About></About></Route>
-        <Route path='/contract'><Contract></Contract></Route>
+        <Route path='/contractus'><Contract></Contract></Route>
 
         <Route path='/login'><Login></Login></Route>
         <Route path='/register'><Register></Register></Route>
