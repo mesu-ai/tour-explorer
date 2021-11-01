@@ -1,23 +1,25 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import about from '../../image/about.png';
+import about from '../../images/about.jpg';
 import './About.css';
 
 const About = () => {
     return (
 
-        // Heart-Care About information
+        // Tour Explorer About information
         <Row style={{height:'',margin:'120px 0px'}} className="row row-cols-lg-2 row-cols-md-2 row-cols-1 d-flex justify-content-between align-items-center container mx-auto">
           <Col >
-              <img className="img-fluid" src={about} alt="" />
+              <img className="img-fluid img-thumbnail btn-outline-warning shadow-lg" src={about} alt="" />
           
           </Col>
           <Col >
-            <h1 className="about-text"> 
-                <span className="text-danger fw-bold ">Trusted care,</span> <br />
-                with HeartCare
-            </h1>
-            <p>We aim to make it easier and more convenient for you to get the help you need from specialist doctors, and consultants.We support 24/7 in any emergency. We are commited to your healthcare.</p>
+            <h3 className="about-text"> 
+                <span className="text-danger fw-bold ">Trusted Tour,</span> <br />
+                & Holiday Planner
+            </h3>
+
+
+            <p>Tour guides work in the travel industry, giving guided tours to groups of visitors. They are experts on the history of the location and offer their tour groups interesting or enlightening information about points of interest at nature attractions, historic sites, museums, scenic locations, and other travel destinations. Guides may give walking tours, bus tours, or even lead river tours on a boat. Often hired by visitors' bureaus or travel companies, tour guides are typically residents of the region in which they give tours.</p>
           
           
           </Col>

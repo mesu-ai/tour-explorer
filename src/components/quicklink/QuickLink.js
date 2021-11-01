@@ -9,10 +9,10 @@ const QuickLink = () => {
         // Quick Service Link
         <Nav defaultActiveKey="/home" className="flex-column">
                     <Link to="/home">Home</Link>
-                    <Link to="">Services</Link>
+                    <Link to="/services">Services</Link>
                     <Link to="">Booking</Link>
-                    <Link to="">Contract Us</Link>
-                    <Link to="">About Us</Link>
+                    <Link to="/contractus">Contract Us</Link>
+                    <Link to="/about">About Us</Link>
                     
                     <Link to="/register">
                         <Button className="btn btn-danger mt-4">Register Now</Button>

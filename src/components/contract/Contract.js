@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Contract.css';
 
 const Contract = () => {
@@ -28,15 +29,16 @@ const Contract = () => {
                 <Card className="h-100 p-3 card-art">
                 <p><i className="fas fa-envelope-open-text text-danger fa-4x"></i></p>
                 <h3>WRITE TO US</h3>
-                <p>office@heartcare.com <br /> book@heartcare.com</p>
+                <p>office@tourexplorer.com <br /> book@tourexplorer.com</p>
                 </Card>
             </Col>
 
             <Col>
                 <Card className="h-100 p-3 card-art">
                 <p><i className="far fa-calendar-alt text-danger fa-4x"></i></p>
-                <h3>BOOK AN APPOINTMENT</h3>
-                <p>Click here to book an <br /> appointment at Heartcare.</p>
+                <h3>BOOK AN TOUR PACKAGE</h3>
+                <p>Click here to book an <br />Holiday Package</p>
+                 <Link to='/services'><button className="btn btn-warning btn-outline-dark">Holiday Package</button></Link>
                 </Card>
             </Col>
 

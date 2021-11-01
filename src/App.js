@@ -1,8 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter,Switch,Route } from 'react-router-dom';
 import './App.css';
+import About from './components/about/About';
 import Login from './components/authentication/login/Login';
 import Register from './components/authentication/register/Register';
+import Contract from './components/contract/Contract';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import Booking from './components/pages/booking/Booking';
@@ -49,6 +51,9 @@ function App() {
         
 
         <Route path='/tourdetails/:id'><TourDetails></TourDetails></Route>
+
+        <Route path='/about'><About></About></Route>
+        <Route path='/contract'><Contract></Contract></Route>
 
         <Route path='/login'><Login></Login></Route>
         <Route path='/register'><Register></Register></Route>
