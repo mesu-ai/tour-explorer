@@ -3,7 +3,7 @@ import { Card, Col } from 'react-bootstrap';
 
 const MyBookingCard = (props) => {
     
-    const  {name,email,phone,tourpack,bookingStatus,date}=props.bookpackage;
+    const  {email,phone,tourpack,bookingStatus,date}=props.bookpackage;
 
 
     // console.log(props);
@@ -15,7 +15,7 @@ const MyBookingCard = (props) => {
             <Card className=" h-100 shadow-lg p-2 package-card">
                 
                 <Card.Body>
-                <Card.Title className="text-capitalize fw-bold package-title">{name}</Card.Title>
+                {/* <Card.Title className="text-capitalize fw-bold package-title">{name}</Card.Title> */}
                 <Card.Title className="text-capitalize fw-bold package-title">Email: {email}</Card.Title>
                 <Card.Title className="text-capitalize fw-bold package-title">Phone: {phone}</Card.Title>
                 <Card.Text className="package-price mb-0"> Booking Package:<span className="cost mb-0"> {tourpack}</span> (single)</Card.Text>

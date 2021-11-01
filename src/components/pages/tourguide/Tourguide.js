@@ -2,7 +2,6 @@ import React from 'react';
 import './TourGuide.css';
 import { Col, Row } from 'react-bootstrap';
 import tourguide from '../../../images/tourguide.png';
-import TopPackage from '../tourPackage/TopPackage';
 import { Link } from 'react-router-dom';
 
 const Tourguide = () => {

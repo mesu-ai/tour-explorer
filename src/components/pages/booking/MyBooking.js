@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Row } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import useBooking from '../../../hooks/useBooking';
@@ -7,16 +7,12 @@ import MyBookingCard from './MyBookingCard';
 const MyBooking = () => {
    const {user}= useAuth();
    const [bookingPackage,setBookingPackage]=useBooking();
-   const [usebook,setbook]=useState([]);
+
 
 //    console.log (bookingPackage);
 
    
-    const mybookings= bookingPackage.filter(bookpackage=>bookpackage.name===user.displayName);
-    
-    console.log(mybookings);
-
-
+    const mybookings= bookingPackage.filter(bookpackage=>bookpackage.email===user.email);
 
 
     return (

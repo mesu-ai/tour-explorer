@@ -67,6 +67,7 @@ const UpdateBooking = () => {
 
     const url=`http://localhost:5000/booking/${id}`;
 
+    // total booking update
     const onSubmit = data =>{
         console.log(data);
         axios.put(url,bookPackage)

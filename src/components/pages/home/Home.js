@@ -6,14 +6,14 @@ import TopPackage from '../tourPackage/TopPackage';
 
 const Home = () => {
     return (
-        <div>
+        <>
             
             <Banner></Banner>
             <TopPackage></TopPackage>
             <About></About>
             <Contract></Contract>
             
-        </div>
+        </>
     );
 };
 

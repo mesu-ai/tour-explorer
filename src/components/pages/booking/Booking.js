@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import useSelectedPackage from '../../../hooks/useSelectedPackage';
 import './Booking.css';
@@ -23,22 +23,24 @@ const Booking = () => {
 
    // console.log(packagePrice);
 
-
+   const history=useHistory();
     const onSubmit = data => {
         const bookingStatus="Pending";
         data.bookingStatus=bookingStatus;
 
-
+       
         axios.post(url,data)
         .then(result=>{
             if(result.data.insertedId){
                 alert('Booking Successfully !');
+                history.push('/services');
+
                 reset();
             }
         })
 
         
-        console.log(data);
+    //    console.log(data);
 
     }
     
@@ -47,8 +49,9 @@ const Booking = () => {
 
 
         <div className="container  my-5">
+            <h3 className="fw-bold">Booking of <span className="text-danger text-capitalize">{tourPack?.title}</span> </h3>
 
-       <form className="  mx-auto booking-form" onSubmit={handleSubmit(onSubmit)}>
+       <form className=" mt-5 mx-auto booking-form" onSubmit={handleSubmit(onSubmit)}>
 
         <Row className="mx-auto row-cols-lg-2 row-cols-md-2 row-cols-1 g-5">
             
@@ -93,7 +96,7 @@ const Booking = () => {
             </Col>
 
         </Row>
-        <input className="mt-4 btn btn-danger"  type="submit" />
+        <input className="mt-4 btn btn-danger px-5"  type="submit" />
 
         </form>
             
