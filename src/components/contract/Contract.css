@@ -1,0 +1,8 @@
+.card-art{
+
+    background-color:rgb(213, 213, 224);
+}
+
+.card-art:hover{
+    background-color:cyan;
+}

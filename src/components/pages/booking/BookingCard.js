@@ -6,7 +6,8 @@ import { useForm } from "react-hook-form";
 import useSelectedBooking from '../../../hooks/useSelectedBooking';
 
 const BookingCard = (props) => {
-    const {_id,name,email,phone,tourpack,bookingStatus,date}=props.bookpackage;
+    const  {_id,name,email,phone,tourpack,bookingStatus,date}=props.bookpackage;
+
     const [bookPackage,setBookPackage]=useSelectedBooking(_id);
     
 
@@ -27,9 +28,10 @@ const BookingCard = (props) => {
 
     const onSubmit = data =>{
         console.log(data);
-        axios.put(url,bookPackage)
+        axios.put(url,data)
         .then(result=>{
                 alert('Update successfully');
+                window.location.reload();
               //  console.log(data);
                 reset();
             
@@ -52,10 +54,16 @@ const BookingCard = (props) => {
                  
                 <Card.Footer>
 
-                <Card.Text className="package-duration mt-0">Booking Status: {bookingStatus}</Card.Text>
+                <Card.Text className="text-black fw-bold mt-0">Booking Status: <span className="text-danger fw-bold">{bookingStatus}</span> </Card.Text>
                     
                 <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("bookingStatus",  { required: true })} onChange={statusHandeler}  />
+
+                {/* <select onChange={statusHandeler} {...register("bookingStatus",{ required: true })}>
+                    <option value="Active">Active</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Review">Review</option>
+                </select> */}
                 
                 <input className="btn btn-success" type="submit" />
                 </form>

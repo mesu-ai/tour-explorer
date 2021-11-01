@@ -48,7 +48,7 @@ const Navigation = () => {
             <NavDropdown title="Manage Service" id="collasible-nav-dropdown">
             <NavDropdown.Item  as={HashLink}  to="/tour/add">Add Tour Package</NavDropdown.Item>
             <NavDropdown.Item  as={HashLink}  to="/tour/managetour">Manage Tour Package</NavDropdown.Item>
-            <NavDropdown.Item as={HashLink} to="/tour/myorder">My Order</NavDropdown.Item> 
+            <NavDropdown.Item as={HashLink} to="/mybooking">My Booking</NavDropdown.Item> 
             <NavDropdown.Item as={HashLink} to="/bookingmanage">Manage Booking</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item  to="#action/3.4">Logout</NavDropdown.Item>

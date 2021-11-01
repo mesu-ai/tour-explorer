@@ -1,5 +1,58 @@
-.footer-container{
-    background-color: cornsilk;
-    height: 200px;
+
+
+/* font roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
+
+
+.footer {
+
+        background-color: navajowhite;
+        padding: 40px;
+        color: black;
+        font-family: 'Roboto', sans-serif;
     
-}
+ }
+ .em-status{
+     text-align: justify;
+ }
+
+
+ .quick-link a{
+     text-decoration: none;
+     font-weight: bold;
+ }
+
+ .copywrite-section{
+     margin: 20px 0px;
+ }
+
+ 
+
+
+ /* media quary for px=992 */
+ @media only screen and (min-width:992px) {
+    .outdoor-shedule {
+        border-left: 1px solid gray;
+        border-right: 1px solid gray;
+    }
+     
+ }
+
+ /* media quary for px=767 */
+
+ @media only screen and (min-width:767px) {
+    .outdoor-shedule {
+        
+        border-right: 1px solid gray;
+    }
+     
+ }
+
+ 
+
+
+
+

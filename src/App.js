@@ -7,6 +7,7 @@ import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import Booking from './components/pages/booking/Booking';
 import ManageBooking from './components/pages/booking/ManageBooking';
+import MyBooking from './components/pages/booking/MyBooking';
 import UpdateBooking from './components/pages/booking/UpdateBooking';
 import Home from './components/pages/home/Home';
 import AddTourPackage from './components/pages/manageTour/add/AddTourPackage';
@@ -44,6 +45,7 @@ function App() {
         <Route path='/bookingmanage'><ManageBooking></ManageBooking></Route>
 
         <Route path='/bookingupdate/:id'><UpdateBooking></UpdateBooking></Route>
+        <Route path="/mybooking"> <MyBooking></MyBooking>  </Route>
         
 
         <Route path='/tourdetails/:id'><TourDetails></TourDetails></Route>
@@ -55,6 +57,7 @@ function App() {
     
 
       </Switch>
+      
       <Footer></Footer>
       </BrowserRouter>
 
