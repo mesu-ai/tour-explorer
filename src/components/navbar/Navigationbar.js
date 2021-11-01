@@ -44,6 +44,7 @@ const Navigation = () => {
             <NavLink activeClassName="active text-white" to="/home">Home</NavLink>
             <NavLink activeClassName="active text-white" to="/services">Services</NavLink>
             <NavLink activeClassName="active text-white" to="/tourguide">Tour Guide</NavLink>
+            <NavLink activeClassName="active text-white" to="/about">About</NavLink>
 
             <NavDropdown title="Manage Service" id="collasible-nav-dropdown">
             <NavDropdown.Item  as={HashLink}  to="/tour/add">Add Tour Package</NavDropdown.Item>

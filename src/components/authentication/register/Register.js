@@ -9,7 +9,8 @@ import useAuth from '../../../hooks/useAuth';
 
 
 const Register = () => {
-    const {signInUsingGoogle} = useAuth();
+   const {user, signInUsingGoogle}= useAuth();
+ 
     const auth = getAuth();
     const [error,setError]=useState('');
     const [isspinner,setSpinner]=useState(false);
@@ -22,6 +23,15 @@ const Register = () => {
 
     const { register, handleSubmit,reset, formState: { errors }}=useForm();
     
+
+    if(user.email){
+      const redi_uri='/home';
+      history.push(redi_uri);
+    }
+
+
+
+
       const onSubmit = (data) => {
        const name= data.name;
        const email=data.email;
@@ -77,6 +87,8 @@ const Register = () => {
         
            
         <>
+
+          
         { isspinner? 
         <Spinner className="mt-5" animation="border" variant="primary" />:
 

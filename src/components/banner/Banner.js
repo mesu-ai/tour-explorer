@@ -54,7 +54,7 @@ const Banner = () => {
       
       </Col>
 
-      <Col>
+      <Col className="mt-lg-0 mt-3">
           <img className="img-fluid img-thumbnail btn-outline-danger" src={cover}  alt="" />
       
       

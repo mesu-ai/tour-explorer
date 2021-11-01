@@ -22,7 +22,11 @@ import TourDetails from './components/pages/tourPackage/TourDetails';
 import PrivateRoute from './components/privateroute/PrivateRoute';
 import AuthProvider from './contex/AuthProvider';
 
+
 function App() {
+ 
+
+
   return (
     <div className="App">
 
@@ -56,7 +60,9 @@ function App() {
         <Route path='/contractus'><Contract></Contract></Route>
 
         <Route path='/login'><Login></Login></Route>
+           
         <Route path='/register'><Register></Register></Route>
+  
 
         <Route path='*'><Notfind></Notfind></Route>
     
