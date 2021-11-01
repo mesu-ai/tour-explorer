@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const TourDetails = () => {
     const {id}= useParams();
-    const url=`http://localhost:5000/tourpackages/${id}`;
+    const url=`https://warm-journey-25318.herokuapp.com/tourpackages/${id}`;
 
     const [tourPackage,setTourPackage]= useState([]);
    

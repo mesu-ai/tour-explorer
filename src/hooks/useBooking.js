@@ -6,7 +6,7 @@ const useBooking = () => {
     
 
 
-    const url='http://localhost:5000/booking';
+    const url='https://warm-journey-25318.herokuapp.com/booking';
 
     useEffect(()=>{
         fetch(url)

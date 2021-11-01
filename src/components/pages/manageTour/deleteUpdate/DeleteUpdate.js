@@ -11,7 +11,7 @@ const DeleteUpdate = () => {
     
 
     const deleteHandeler=(id)=>{
-        const url=`http://localhost:5000/tourpackages/${id}`;
+        const url=`https://warm-journey-25318.herokuapp.com/tourpackages/${id}`;
         console.log(id);
 
         const proceed=window.confirm('Are you want to sure delete the package?');

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const useTourPackage = () => {
     const [tourpackages,setTourPackages]= useState([]);
     
-    const url='http://localhost:5000/tourpackages';
+    const url='https://warm-journey-25318.herokuapp.com/tourpackages';
 
     useEffect(()=>{
         fetch(url)

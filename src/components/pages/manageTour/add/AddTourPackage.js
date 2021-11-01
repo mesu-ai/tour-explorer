@@ -9,7 +9,7 @@ const AddTourPackage = () => {
  
     const onSubmit = data =>{
 
-    const url='http://localhost:5000/tourpackages';
+    const url='https://warm-journey-25318.herokuapp.com/tourpackages';
     axios.post(url,data)
     .then(result=>{
         console.log(result.data);

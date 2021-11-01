@@ -65,7 +65,7 @@ const UpdateBooking = () => {
         
     }
 
-    const url=`http://localhost:5000/booking/${id}`;
+    const url=`https://warm-journey-25318.herokuapp.com/booking/${id}`;
 
     // total booking update
     const onSubmit = data =>{
