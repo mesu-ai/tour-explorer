@@ -2,11 +2,13 @@ import React from 'react';
 import '../ManageTour.css';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+import { useHistory } from 'react-router';
 
 
 const AddTourPackage = () => {
     const { register, handleSubmit,reset,formState: { errors } } = useForm();
  
+   const history= useHistory();
     const onSubmit = data =>{
 
     const url='https://warm-journey-25318.herokuapp.com/tourpackages';
@@ -16,7 +18,10 @@ const AddTourPackage = () => {
         if(result.data.insertedId){
 
             alert('Package Inserted Successfully !')
-            console.log(data);
+            const redirec_url='/';
+            history.push(redirec_url);
+
+            // console.log(data);
             reset();
         }
 

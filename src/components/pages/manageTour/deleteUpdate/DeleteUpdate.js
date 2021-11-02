@@ -12,7 +12,7 @@ const DeleteUpdate = () => {
 
     const deleteHandeler=(id)=>{
         const url=`https://warm-journey-25318.herokuapp.com/tourpackages/${id}`;
-        console.log(id);
+        // console.log(id);
 
         const proceed=window.confirm('Are you want to sure delete the package?');
 
@@ -30,7 +30,7 @@ const DeleteUpdate = () => {
         const url=`/tour/updatetour/${id}`;
         history.push(url);
         
-        console.log(id);
+        // console.log(id);
 
 
     }

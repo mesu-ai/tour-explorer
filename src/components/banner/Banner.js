@@ -11,7 +11,7 @@ import useSelectedPackage from '../../hooks/useSelectedPackage';
 const Banner = () => {
     const hotToreId='617dcd1c1dc3dc4f5b8edd12';
     const [tourPack,setTourPack] = useSelectedPackage(hotToreId);
-    console.log(tourPack);
+    // console.log(tourPack);
 
 
 

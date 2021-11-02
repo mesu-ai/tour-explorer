@@ -1,9 +1,10 @@
+import Button from '@restart/ui/esm/Button';
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 
 const MyBookingCard = (props) => {
     
-    const  {email,phone,tourpack,bookingStatus,date}=props.bookpackage;
+    const  {_id,email,phone,tourpack,bookingStatus,date}=props.bookpackage;
 
 
     // console.log(props);
@@ -25,8 +26,12 @@ const MyBookingCard = (props) => {
                 <Card.Footer>
 
                 <Card.Text className="fw-bold mt-0">Booking Status: <span className="text-danger">{bookingStatus}</span> </Card.Text>
+
+
                     
                 </Card.Footer>
+
+                <Button onClick={()=>props.deleteHandeler(_id)} className="btn btn-danger my-3">Cancle Order</Button>
                 
                 
                 </Card.Body>

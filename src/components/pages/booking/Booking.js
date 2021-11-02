@@ -11,7 +11,7 @@ import './Booking.css';
 const Booking = () => {
     const {user}= useAuth();
     const {id}=useParams();
-    const url='http://localhost:5000/booking';
+    const url='https://warm-journey-25318.herokuapp.com/booking';
 
 
     const [tourPack,setTourPack] = useSelectedPackage(id);

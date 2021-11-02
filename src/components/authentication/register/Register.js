@@ -25,8 +25,8 @@ const Register = () => {
     
 
     if(user.email){
-      const redi_uri='/home';
-      history.push(redi_uri);
+      // const redi_uri='/home';
+      history.push(redirect_uri);
     }
 
 
