@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { useForm } from "react-hook-form";
-import { Link,useHistory,useParams } from 'react-router-dom';
+import { Link,useHistory,useLocation } from 'react-router-dom';
 import googlelogo from '../../../images/google.png';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import useAuth from '../../../hooks/useAuth';
@@ -17,10 +17,10 @@ const Login = () => {
     const [isLoading,setLoading]=useState(true);
 
     const { register, handleSubmit,reset, formState: { errors }}=useForm();
-
+   
+  const location= useLocation();
    const history= useHistory();
-   const location=useParams();
-   const redirect_uri=location.state?.from || '/';
+   const redirect_uri=location.state?.from || '/home';
 
     const handleGoogleLogin=()=>{
       setLoading(true);

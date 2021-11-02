@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Link,useHistory,useParams } from 'react-router-dom';
+import { Link,useHistory,useLocation} from 'react-router-dom';
 import googlelogo from '../../../images/google.png';
 import { getAuth, createUserWithEmailAndPassword,updateProfile} from "firebase/auth";
 import { Spinner } from 'react-bootstrap';
@@ -15,9 +15,8 @@ const Register = () => {
     const [error,setError]=useState('');
     const [isspinner,setSpinner]=useState(false);
     
-
+    const location= useLocation();
     const history= useHistory();
-    const location=useParams();
     const redirect_uri=location.state?.from || '/home';
   
 
@@ -25,10 +24,9 @@ const Register = () => {
     const { register, handleSubmit,reset, formState: { errors }}=useForm();
     
 
-    if(user.email){
-      // const redi_uri='/home';
-      history.push(redirect_uri);
-    }
+    // if(user.email){
+    //   history.push(redirect_uri);
+    // }
 
 
 
