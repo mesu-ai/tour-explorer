@@ -8,7 +8,7 @@ const PrivateRoute = ({children, ...rest}) => {
    const {user,isLoading} = useAuth();
 
    if(isLoading){
-     return <Spinner className="d-flex justify-content-center align-items-center" animation="border" variant="success" />
+     return <Spinner animation="border" variant="success" />
    }
 
     return (

@@ -19,6 +19,7 @@ const Register = () => {
     const history= useHistory();
     const location=useParams();
     const redirect_uri=location.state?.from || '/home';
+  
 
 
     const { register, handleSubmit,reset, formState: { errors }}=useForm();
