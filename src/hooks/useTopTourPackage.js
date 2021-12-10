@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 
-const useTourPackage = () => {
-    const [tourpackages,setTourPackages]= useState([]);
-   
+const useTopTourPackage = () => {
+    const [topTourPackages,setTopTourPackages]= useState([]);
 
     
     const url='https://warm-journey-25318.herokuapp.com/tourpackages';
@@ -11,14 +10,14 @@ const useTourPackage = () => {
         fetch(url)
         .then(res=>res.json())
         .then(data=>{
-            setTourPackages(data);
+            setTopTourPackages(data.slice(-6));
         })  
 
     },[]);
 
-
+    console.log(topTourPackages);
    
-    return [tourpackages,setTourPackages];
+    return [topTourPackages];
 };
 
-export default useTourPackage;
+export default useTopTourPackage;

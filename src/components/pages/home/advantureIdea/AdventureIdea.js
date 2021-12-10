@@ -16,11 +16,11 @@ const AdventureIdea = () => {
 
 
     return (
-        <div className='my-4 container'>
+        <div className='my-5 container'>
             
             <h3 className="fs-2 fw-bold">Adventure Idea</h3>
             
-            <Row xs={1} md={3} lg={4} className="g-4 mx-auto">
+            <Row xs={1} md={3} lg={4} className="g-4 mx-auto my-3">
                 
                 {
                     ideas.map(idea=><AdventureCard key={Math.random()} idea={idea}></AdventureCard>)
@@ -28,6 +28,7 @@ const AdventureIdea = () => {
                 }
            
             </Row>
+            <hr className='mt-4' />
             
         </div>
     );

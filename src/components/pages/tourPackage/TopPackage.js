@@ -1,12 +1,13 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 import { useHistory } from 'react-router';
-import useTourPackage from '../../../hooks/useTourPackage';
-import Tour from './Tour';
+import useTopTourPackage from '../../../hooks/useTopTourPackage';
+import TourCard from './TourCard';
+
 
 const TopPackage = () => {
 
-    const [topTourPackages]= useTourPackage();
+    const [topTourPackages]= useTopTourPackage();
     console.log(topTourPackages);
 
 
@@ -19,16 +20,18 @@ const TopPackage = () => {
 
    }
     return (
-        <div className='container'>
-            <Row lg={3} xs={1} md={2} className="g-4 my-5  mx-auto">
+        <div className='container my-5'>
+            
+            <h3 className="fs-2 fw-bold pt-5">Latest Package</h3>
+            <Row lg={3} xs={1} md={2} className="g-4 my-4  mx-auto">
             
             {
-            topTourPackages.map(tourpackage=><Tour tourpackage={tourpackage} key={Math.random()} handleDetails={handleDetails}>
+            topTourPackages.map(tourpackage=><TourCard tourpackage={tourpackage} key={Math.random()} handleDetails={handleDetails}>
 
             <span>Book Now</span>
             
 
-            </Tour>)
+            </TourCard>)
             }
  
             </Row>
