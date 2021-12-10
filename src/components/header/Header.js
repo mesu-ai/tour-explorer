@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import Navigation from '../navbar/Navigationbar';
+import Navigation from './navbar/Navigationbar';
 
 import './Header.css';
 

@@ -3,8 +3,8 @@ import './Navigationbar.css';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { useHistory,NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import tour from '../../images/tour.png'
-import useAuth from '../../hooks/useAuth';
+import tour from '../../../images/tour.png'
+import useAuth from '../../../hooks/useAuth';
 
 
 

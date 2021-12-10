@@ -50,7 +50,7 @@ const Login = () => {
         signInWithEmailAndPassword(auth, email, password)
           .then((result) => {
             history.push(redirect_uri);
-            const user = result.user;
+            // const user = result.user;
             reset();
             // ...
           })

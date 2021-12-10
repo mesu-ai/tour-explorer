@@ -2,15 +2,15 @@ import React from 'react';
 import './Banner.css';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import cover from '../../images/banner.jpg';
-import useSelectedPackage from '../../hooks/useSelectedPackage';
+import cover from '../../../../images/banner.jpg';
+import useSelectedPackage from '../../../../hooks/useSelectedPackage';
 
 
 
 
 const Banner = () => {
     const hotToreId='617dcd1c1dc3dc4f5b8edd12';
-    const [tourPack,setTourPack] = useSelectedPackage(hotToreId);
+    const [tourPack] = useSelectedPackage(hotToreId);
     // console.log(tourPack);
 
 

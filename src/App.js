@@ -1,16 +1,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter,Switch,Route } from 'react-router-dom';
 import './App.css';
-import About from './components/about/About';
+
 import Login from './components/authentication/login/Login';
+import PrivateRoute from './components/authentication/privateroute/PrivateRoute';
 import Register from './components/authentication/register/Register';
-import Contract from './components/contract/Contract';
+
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
+import About from './components/pages/about/About';
 import Booking from './components/pages/booking/Booking';
 import ManageBooking from './components/pages/booking/ManageBooking';
 import MyBooking from './components/pages/booking/MyBooking';
 import UpdateBooking from './components/pages/booking/UpdateBooking';
+import Contract from './components/pages/home/contract/Contract';
 import Home from './components/pages/home/Home';
 import AddTourPackage from './components/pages/manageTour/add/AddTourPackage';
 import DeleteUpdate from './components/pages/manageTour/deleteUpdate/DeleteUpdate';
@@ -19,7 +22,7 @@ import Notfind from './components/pages/notfind/Notfind';
 import Services from './components/pages/services/Services';
 import Tourguide from './components/pages/tourguide/Tourguide';
 import TourDetails from './components/pages/tourPackage/TourDetails';
-import PrivateRoute from './components/privateroute/PrivateRoute';
+
 import AuthProvider from './contex/AuthProvider';
 
 

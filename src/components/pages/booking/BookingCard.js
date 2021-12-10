@@ -6,7 +6,7 @@ import useAuth from '../../../hooks/useAuth';
 
 const BookingCard = (props) => {
     const{user}= useAuth();
-    const  {_id,name,email,phone,tourpack,bookingStatus,date,age,tourprice,totalprice}=props.bookpackage;
+    const  {_id,email,phone,tourpack,bookingStatus,date,age,tourprice,totalprice}=props.bookpackage;
 
     const statusHandeler=(id)=>{
 

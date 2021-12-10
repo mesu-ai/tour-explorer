@@ -1,11 +1,11 @@
 .about-text{
-    font-size: 55px;
+    font-size: 3vw;
     
 }
 
 @media only screen and (max-width:992px ) {
     .about-text{
-        font-size: 30px;
+        font-size: 4vw;
         
     } 
     
@@ -13,8 +13,9 @@
 
 @media only screen and (max-width:668px ) {
     .about-text{
-        font-size: 25px;
+        font-size: 5vw;
         margin-top: 10px;
+
         
     } 
     

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Col, Container} from 'react-bootstrap';
-import Copywrite from '../copywrite/Copywrite';
-import QuickLink from '../quicklink/QuickLink';
-import WorkHour from '../workhour/WorkHour';
+import Copywrite from './copywrite/Copywrite';
+import QuickLink from './quicklink/QuickLink';
+import WorkHour from './workhour/WorkHour';
 import './Footer.css';
 
 const Footer = () => {

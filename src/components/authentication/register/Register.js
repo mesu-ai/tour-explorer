@@ -9,7 +9,7 @@ import useAuth from '../../../hooks/useAuth';
 
 
 const Register = () => {
-   const {user, signInUsingGoogle}= useAuth();
+   const { signInUsingGoogle}= useAuth();
  
     const auth = getAuth();
     const [error,setError]=useState('');
@@ -49,7 +49,7 @@ const Register = () => {
           .then((result) => {
 
             setUserName(name);
-            const user = result.user;           
+            // const user = result.user;           
             reset();
             setError('');
             setSpinner(false);

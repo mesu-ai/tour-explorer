@@ -6,12 +6,12 @@ import Tour from './Tour';
 
 const TopPackage = () => {
 
-    const [tourpackages]= useTourPackage();
-//    console.log(tourpackages);
+    const [topTourPackages]= useTourPackage();
+    console.log(topTourPackages);
 
 
-   const history=useHistory();
-   const handleDetails=(id)=>{
+    const history=useHistory();
+    const handleDetails=(id)=>{
       
     const url=`/tourdetails/${id}`;
     history.push(url);
@@ -19,10 +19,11 @@ const TopPackage = () => {
 
    }
     return (
-        <div>
-            <Row lg={3} xs={1} md={2} className="g-4 my-5 container mx-auto">
+        <div className='container'>
+            <Row lg={3} xs={1} md={2} className="g-4 my-5  mx-auto">
+            
             {
-            tourpackages.map(tourpackage=><Tour tourpackage={tourpackage} key={Math.random()} handleDetails={handleDetails}>
+            topTourPackages.map(tourpackage=><Tour tourpackage={tourpackage} key={Math.random()} handleDetails={handleDetails}>
 
             <span>Book Now</span>
             

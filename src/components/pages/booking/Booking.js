@@ -14,8 +14,8 @@ const Booking = () => {
     const url='https://warm-journey-25318.herokuapp.com/booking';
 
 
-    const [tourPack,setTourPack] = useSelectedPackage(id);
-    const { register, handleSubmit,setFocus,reset } = useForm();
+    const [tourPack] = useSelectedPackage(id);
+    const { register, handleSubmit,reset } = useForm();
 
     const packagePrice= parseInt(tourPack.price);
     const tax= parseFloat(packagePrice*.15);
