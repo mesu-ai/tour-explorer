@@ -1,9 +1,9 @@
 import React from 'react';
-import About from '../about/About';
 import Banner from './banner/Banner';
 import Contract from './contract/Contract';
 import TopPackage from '../tourPackage/TopPackage';
 import AdventureIdea from './advantureIdea/AdventureIdea';
+import OutdoorExperience from './outdoorExperience/OutdoorExperience';
 
 const Home = () => {
     return (
@@ -12,7 +12,7 @@ const Home = () => {
             <Banner></Banner>
             <AdventureIdea></AdventureIdea>
             <TopPackage></TopPackage>
-            <About></About>
+            <OutdoorExperience></OutdoorExperience>
             <Contract></Contract>
             
         </>
