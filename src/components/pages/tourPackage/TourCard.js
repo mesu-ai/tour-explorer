@@ -1,7 +1,6 @@
 import React from 'react';
 import './TourPackage.css';
 import { Card, Col } from 'react-bootstrap';
-import Button from '@restart/ui/esm/Button';
 
 const TourCard = (props) => {
     const {_id,title,price,img,tour_date,tour_duration}=props.tourpackage;

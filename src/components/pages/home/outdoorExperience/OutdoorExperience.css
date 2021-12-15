@@ -21,6 +21,10 @@
     .small-screen{
         height: 200px;
     }
+    .carousel-indicators [data-bs-target] {
+        display: none;
+        /* background-color: rgb(247, 247, 247) ; */
+    }
 
 }
 @media only screen and (max-width:662px){

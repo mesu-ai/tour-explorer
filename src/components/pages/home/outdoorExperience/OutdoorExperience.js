@@ -26,7 +26,7 @@ const OutdoorExperience = () => {
                     </Col>
                     <Col className='px-0'>
                         <img
-                        className="d-block w-100 small-screen"
+                        className="d-block w-100 img-fluid small-screen"
                         src={img3}
                         alt="First slide"
                         />
@@ -47,7 +47,7 @@ const OutdoorExperience = () => {
                     </Col>
                     <Col className='px-0'>
                         <img
-                        className="d-block w-100 small-screen"
+                        className="d-block w-100 small-screen img-fluid"
                         src={img2}
                         alt="First slide"
                         />
@@ -67,7 +67,7 @@ const OutdoorExperience = () => {
                     </Col>
                     <Col className='px-0'>
                         <img
-                        className="d-block w-100 small-screen"
+                        className="d-block w-100 small-screen img-fluid"
                         src={img1}
                         alt="First slide"
                         />

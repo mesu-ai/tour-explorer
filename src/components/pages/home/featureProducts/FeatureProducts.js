@@ -1,95 +1,179 @@
-import React from 'react';
-import { Row } from 'react-bootstrap';
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import React from "react";
+import Slider from "react-slick";
 import FeatureCard from './FeatureCard';
-
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import { Container } from "react-bootstrap";
+import './FeatureProduct.css';
 
 const featuresProducts = [
     
     {
-            title: 'Efren Reyes',
+            title: 'Torch',
             desc: 'Known as "The Magician", Efren Reyes is well regarded by many professionals as the greatest all around player of all time.',
-            image: 'https://i.postimg.cc/RhYnBf5m/er-slider.jpg',
+            image: 'https://i.ibb.co/FzBq2GW/torch-prev-ui.png',
+            rating:5,
+            price:10
 
         },
 
         {
-            title: "Ronnie O'Sullivan",
+            title: "Travel Tools",
             desc: "Ronald Antonio O'Sullivan is a six-time world champion and is the most successful player in the history of snooker.",
-            image: 'https://i.postimg.cc/qBGQNc37/ro-slider.jpg',
+            image: 'https://i.ibb.co/JmBNMBV/tools-prev-ui.png',
+            rating:5,
+            price:15
         },
    
         {
-            title: 'Shane Van Boening',
+            title: 'WaterProof Tent',
             desc: 'The "South Dakota Kid" is hearing-impaired and uses a hearing aid, but it has not limited his ability.',
-            image: 'https://i.postimg.cc/cHdMJQKG/svb-slider.jpg',
+            image: 'https://i.ibb.co/vjN2Bk5/tent-prev-ui.png',
+            rating:5,
+            price:12
         },
         
         {
-            title: 'Mike Sigel',
+            title: 'Sleeping Kit',
             desc: 'Mike Sigel or "Captain Hook" as many like to call him is an American professional pool player with over 108 tournament wins.',
-            image: 'https://i.postimg.cc/C12h7nZn/ms-1.jpg',
+            image: 'https://i.ibb.co/XZTm79y/sleepkit-prev-ui.png',
+            rating:5,
+            price:80
         },
         
         {
-            title: 'Willie Mosconi',
+            title: 'Travel Rope',
             desc: 'Nicknamed "Mr. Pocket Billiards," Willie Mosconi was among the first Billiard Congress of America Hall of Fame inductees.',
-            image: 'https://i.postimg.cc/NfzMDVHP/willie-mosconi-slider.jpg',
+            image: 'https://i.ibb.co/3fZchhF/rope-prev-ui.png',
+            rating:5,
+            price:320
+        },
+        {
+            title: 'Lamp',
+            desc: 'Nicknamed "Mr. Pocket Billiards," Willie Mosconi was among the first Billiard Congress of America Hall of Fame inductees.',
+            image: 'https://i.ibb.co/g67GwWX/lamp-prev-ui.png',
+            rating:5,
+            price:25
+        },
+        {
+            title: 'Knife Set',
+            desc: 'Nicknamed "Mr. Pocket Billiards," Willie Mosconi was among the first Billiard Congress of America Hall of Fame inductees.',
+            image: 'https://i.ibb.co/gdDRWJy/knife-prev-ui.png',
+            rating:5,
+            price:20
+        },
+        
+        {
+            title: 'Compus',
+            desc: 'Nicknamed "Mr. Pocket Billiards," Willie Mosconi was among the first Billiard Congress of America Hall of Fame inductees.',
+            image: 'https://i.ibb.co/yff2LQ6/compus-prev-ui.png',
+            rating:5,
+            price:30
+        },
+        {
+            title: 'Boot Shoe',
+            desc: 'Nicknamed "Mr. Pocket Billiards," Willie Mosconi was among the first Billiard Congress of America Hall of Fame inductees.',
+            image: 'https://i.ibb.co/HBtjyMf/boot-prev-ui.png',
+            rating:5,
+            price:100
+        },
+        {
+            title: 'Travel Bag',
+            desc: 'Nicknamed "Mr. Pocket Billiards," Willie Mosconi was among the first Billiard Congress of America Hall of Fame inductees.',
+            image: 'https://i.ibb.co/NrF01jz/bag-prev-ui.png',
+            rating:5,
+            price:40
         }
 
 ];
 
 
-
-const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 3 // optional, default to 1.
+var settings = {
+  // dots: true,
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  pauseOnHover: true,
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1080,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        
+      }
     },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2 // optional, default to 1.
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        
+      }
     },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1 // optional, default to 1.
+    {
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
     }
-  };
-const FeatureProducts = (props) => {
-    return (
+  ]
+};
 
-<Carousel
-  swipeable={false}
-  draggable={false}
-  showDots={true}
-  responsive={responsive}
-  ssr={true} 
-  infinite={true}
-  autoPlay={props.deviceType !== "mobile" ? true : false}
-  autoPlaySpeed={1000}
-  keyBoardControl={true}
-  customTransition="all .5"
-  transitionDuration={500}
-  containerClass="carousel-container"
-  removeArrowOnDeviceType={["tablet", "mobile"]}
-  deviceType={props.deviceType}
-  dotListClass="custom-dot-list-style"
-  itemClass="carousel-item-padding-40-px"
->
-  {/* <div>Item 1</div>
-  <div>Item 2</div>
-  <div>Item 3</div>
-  <div>Item 4</div> */}
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "green" }}
+      
+      onClick={onClick}
+    />
+  );
+}
 
-  <Row xs={1} md={3} className="g-4">
-  { featuresProducts.map(product=><FeatureCard key={Math.random()} product={product}></FeatureCard>)}
-  </Row>
-</Carousel>
-            
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+
+      style={{ ...style, display: "block", background: "red" }}
+    
+      onClick={onClick}
+    />
+  );
+}
+
+
+
+const FeatureProducts =()=> {
+  
+
+  return(
+
+    <Container className="my-4 shadow-lg">
+    <h3 className="fs-2 fw-bold pt-4">Travel Kit</h3>
+    <div className="px-3 py-4">
+    <Slider {...settings} className='p-3  rounded-2'>
+
+  { 
+  featuresProducts.map(product=><FeatureCard key={Math.random()} product={product}></FeatureCard>)
+  }
+      
+    </Slider>
+    
+    </div>
+    
+    
+  </Container>
+     
         
     );
 };

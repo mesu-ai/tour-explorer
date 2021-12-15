@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import AdventureCard from './AdventureCard';
 
 
