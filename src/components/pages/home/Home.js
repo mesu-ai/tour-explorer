@@ -6,6 +6,8 @@ import AdventureIdea from './advantureIdea/AdventureIdea';
 import OutdoorExperience from './outdoorExperience/OutdoorExperience';
 
 import FeatureProducts from './featureProducts/FeatureProducts';
+import ClientReview from './clientReview/ClientReview';
+import OurServices from './ourServices/OurServices';
 
 
 const Home = () => {
@@ -16,7 +18,9 @@ const Home = () => {
             <AdventureIdea></AdventureIdea>
             <FeatureProducts></FeatureProducts>
             <TopPackage></TopPackage>
+            <OurServices></OurServices>
             <OutdoorExperience></OutdoorExperience>
+            <ClientReview></ClientReview>
             <Contract></Contract>
             
         </div>

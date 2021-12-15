@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './TourPackage.css';
 import { Card, Col } from 'react-bootstrap';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const TourCard = (props) => {
     const {_id,title,price,img,tour_date,tour_duration}=props.tourpackage;
 
+    useEffect(()=>{
+        AOS.init({
+            
+        });
+        
+    },[]);
+
 
     return (
         <Col>
-            <Card className="h-100 shadow-lg p-2 package-card border border-dark ">
+            <Card data-aos="flip-right" className="h-100 shadow-lg p-2 package-card border border-dark ">
                 <Card.Img variant="top" src={img} height="180" />
                 <Card.Body className='text-overlap mt-1'>
                 <Card.Title className="text-capitalize fw-bold package-title">{title}</Card.Title>

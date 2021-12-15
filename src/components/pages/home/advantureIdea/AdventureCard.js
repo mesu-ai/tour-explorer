@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Adventure.css';
 import { Card, Col } from 'react-bootstrap';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const AdventureCard = ({idea}) => {
     const {name,image} = idea;
+
+    useEffect(()=>{
+      AOS.init({
+          
+      });
+      
+  },[]);
     return (
         
 
             <Col>
-            <Card className='h-100 p-2 adventure-container'>
+            <Card data-aos="zoom-in-up" className='h-100 p-2 adventure-container'>
             <Card.Img variant="top" src={image} style={{width:'180px',height:'150px'}} className='rounded-circle mx-auto'/>
             <Card.Body className='text-overlap mt-1'>
             

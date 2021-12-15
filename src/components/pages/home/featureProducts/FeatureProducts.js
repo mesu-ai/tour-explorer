@@ -159,7 +159,7 @@ const FeatureProducts =()=> {
   return(
 
     <Container className="my-4 shadow-lg">
-    <h3 className="fs-2 fw-bold pt-4">Travel Kit</h3>
+    <h3 className="fs-2 fw-bold pt-4">Tour Accessories</h3>
     <div className="px-3 py-4">
     <Slider {...settings} className='p-3  rounded-2'>
 
